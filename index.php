@@ -99,6 +99,7 @@
 					</div>
                 
 					<!-- Sidebar -->
+                
                 <?php include 'sidebar.php';?>
         </div>
 		<!-- Scripts -->
