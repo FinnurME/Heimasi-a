@@ -72,13 +72,36 @@
                             
                                     <h3>Part 2</h3>
                                     <p>
-                                    First of we needed to perform a KERF test on the lazer cutter. A short report on the KERF test can be found on my team members <a href = "https://saemi10.github.io/TolvustuddFramleidsla/V2.html#kerf">website</a>. My first idea was designing an adjustable plant shelf that could hang on a wall. this would have to hold together only by press fitted material. This would mean that the shelf will be have to be heavily reinforced in order to hold reliably together. This convinced me to instead design a small standing shelve. Perhaps one where larger pots could be placed above a smaller segment containing seedlings. That would allow excess water from the pots could leak down to water the seedlings. 
+                                    First of we needed to perform a KERF test on the lazer cutter. A short report on the KERF test can be found on my team members <a href = "https://saemi10.github.io/TolvustuddFramleidsla/V2.html#kerf">website</a>. My first idea was designing a plant shelf that could hang on a wall. this would have to hold together only by press fitted material. This would mean that the shelf will be have to be heavily reinforced in order to hold reliably together. This convinced me to instead design a small standing shelve. Perhaps one where larger pots could be placed above a smaller segment containing seedlings. That would allow excess water from the pots could leak down to water the seedlings. 
                                     </p>
                                     <p>
 
-                                    A few things need to be considered before the designing process can begin: The material used needs to be able to withstand being soaked in water so using plastics instead of wood be preferable. The weigth of the upper pots means that the shelve will be top heavy, in order to counter that, the base of the shelve needs to be relatively thick. Lastly the amount of material used is limiting.
+                                    A few things need to be considered before the designing process can begin: The material used needs to be able to withstand being soaked in water so using plastics instead of wood be preferable. The weigth of the upper pots means that the shelve will be top heavy, in order to counter that, the base of the shelve needs to be relatively thick. Lastly the amount of material used is limiting. I began by making a exact model of the flower pots I had at home and weighed them. They weighed together around 500 grams with plants, being recently watered. Below you can see the first draft of the shelf. 
                                     </p>
+                                    <span class="image"><img src="images/BH-1.jpg" width ="500" height = "375" alt="" />
+                                    </span>
 									<hr class="major" />
+                                    <p>
+                                        This seemed to work but before I could keep developing the design I made a simple structural simulation in Fusion 360. I did this by Setting the material of the shelf to clear acrylic, constrained the bottom of the feet of the shelf and put a force of 10N (2x the required ) on the top part. This gave this result
+                                    </p>
+                                    <span class="image"><img src="images/BH-disp2.jpg" width ="550" height = "375" alt="" />Simulation of force on shelf 1
+                                    </span>
+									<hr class="major" />
+                                    <p>
+                                        The displacement of the shelf is negligible especially since the actual force distribution is not so uniform, but rather closer to the edges, minimizing the effect of the pots weight. Next version had the bottom shelf for the seedlings which still seemed to hold up with a safety factor of atleast 15 and minimal displacement.
+                                    </p>
+                                    <span class="image"><img src="images/BH2-disp10N.jpg" width ="550" height = "375" alt="" />
+                                    </span>
+									<hr class="major" />
+                                    <p>
+                                        The next step was getting rid of zones on the sides of the shelf which were not very affected by the load. A triangle was cut from the bottom feet and from the middle of the side, above the lower shelf.
+                                    </p>
+                                    <span class="image"><img src="images/BH3-disp10N.jpg" width ="550" height = "375" alt="" />
+                                    </span>
+									<hr class="major" />
+                                    <p>
+                                        Again the effects of the load were minimal. I settled on this design and began exporting the file to a format that the lasercutter could take. I used <a href = "https://www.youtube.com/watch?v=D1Btaqhog9E&t=229s">this video</a> as a guide on how to do that. 
+                                    </p>
                                     <!--
 									<h2>Interdum sed dapibus</h2>
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
