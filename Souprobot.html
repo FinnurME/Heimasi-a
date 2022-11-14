@@ -6,41 +6,12 @@
 -->
 <html>
 	<head>
-        <title>Finnur - VÉL601G</title>
+		<title>Finnur - SoupBot</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-        <script>
-            function includeHTML() {
-              var z, i, elmnt, file, xhttp;
-              /* Loop through a collection of all HTML elements: */
-              z = document.getElementsByTagName("*");
-              for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                /*search for elements with a certain atrribute:*/
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                  /* Make an HTTP request using the attribute value as the file name: */
-                  xhttp = new XMLHttpRequest();
-                  xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                      /* Remove the attribute, and call this function once more: */
-                      elmnt.removeAttribute("include-html");
-                      includeHTML();
-                    }
-                  }
-                  xhttp.open("GET", file, true);
-                  xhttp.send();
-                  /* Exit the function: */
-                  return;
-                }
-              }
-            }
-        </script>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -52,68 +23,71 @@
 							<!-- Header -->
 								<header id="header">
 									<ul class="icons">
+                                        <li><a href="https://www.linkedin.com/in/finnur-mauritz-einarsson-358651232/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
 										<li><a href="https://github.com/FinnurME" class="icon brands fa-github"><span class="label">Github</span></a>
 									</ul>
 								</header>
-
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>VÉL601G</h1>
-                                        <h2>Energy Processes</h2>
+										<h1>SoupBot</h1>
 									</header>
-                                </section>
-                                    <!--
-									<span class="image right"><img src="images/vel608mfellar.jpg" alt="" />Ragnar, Finnur and Eldar</span>-->
 
-                                    <p>Page re-work in progress</p>
+									<span class="image main"><img src="images/Souprobot.jpg" alt="" /></span>
                                     
-                                    <!--<p>Official course description and other information can be found at <a href="https://ugla.hi.is/kennsluskra/index.php?sid=&tab=nam&chapter=namskeid&id=71046420220">Uglan</a>.</p>
+                                    <p>
+                                    This project was the first of two projects we made in the course <a href = "VEL205M.html"><i>Mechatronics</i></a>. The assignment was designing and building a simple robot, capable of performing the following tasks:
+                                    <li>
+                                    Detectinng between two types of soup, Tomato and Asparagus
+                                    </li>
+                                    <li>
+                                    Measuring and determining if the soup is too hot for consumption   
+                                    </li>
+                                    <li>
+                                    Feeding a person the soup    
+                                    </li>
+                                    <li>
+                                    Have the temperature, type of soup and a camera feed update live on a website
+                                    </li>
+                                    </p>
+                                    <p>
+                                    I worked on this project with<a href = "https://allitob.github.io/">Atli Tobiasson Helmer</a> and we made the decision to focus on doing the tasks reliably and steared away from overly complicated solutions. This resaulted in a simple tower-like structure with extremely simple mechanisms qhich made the robot's movement very reliable but in turn, not very flexible.
+                                    </p>
                                     
-                                    <section>
-									<header class="major">
-                                        <h2><a href="VEL608M.html">VÉL608M</a></h2>
-									</header>
-									<div class="posts">
-										<article>
-											<a href="Verkefni1.html" class="image"><img src="images/htmlmeme.jpg" alt="" /></a>
-											<h3>Assignment 1</h3>
-											<p>Making a website using HTML5</p>
-											<ul class="actions">
-												<li><a href="Verkefni1.html" class="button">More</a></li>
-											</ul>
-										</article>
-                                        <article>
-											<a href="Verkefni2.html" class="image"><img src="images/pic01.jpg" alt="" /></a>
-											<h3>Assignment 2</h3>
-											<p>Computer aided cutting</p>
-											<ul class="actions">
-												<li><a href="Verkefni2.html" class="button">More</a></li>
-											</ul>
-										</article>
-									</div>
-								</section>-->
-                                    <!--
+                                    <p>
+                                    The process was recorded on <a href = "https://allitob.github.io/soupBot">Atli's website</a> (The website is in Icelandic). Below is a short video showing a demo code that feeds our professor, <a href = "https://ugla.hi.is/simaskra/views/skodanotanda.php?sid=951&bb=aLaPWllHKpcXBneQrqUczzQrqXpzgHgH">Magnús Þór Jónsson</a>, soup successfully. Notice after the spoon goes up, it makes sure the spoon isn't overfilled. For this project we recieved a grade of 95/100.
+                                    </p>
+                                    
+                                    <div>
+                                    <iframe src="https://www.youtube.com/embed/BkpS8Ibf-eU" width = "80%" height = "650" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                    </div>
+                                 
+
 									<hr class="major" />
-
+                                    <!--
 									<h2>Interdum sed dapibus</h2>
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
 									<hr class="major" />
+
 									<h2>Magna etiam veroeros</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
 									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
 									<hr class="major" />
+
 									<h2>Lorem aliquam bibendum</h2>
 									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-
-								</section>
                                     -->
+								</section>
+
 						</div>
 					</div>
-
-				<!-- Sidebar -->
+                
+					<!-- Sidebar -->
+					<!-- Sidebar -->
 					<div id="sidebar">
 				        <div class="inner">
                         <!-- Search -->
@@ -148,7 +122,7 @@
                             </section>
 			             </div>
                     </div>
-            </div>
+        </div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

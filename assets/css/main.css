@@ -1206,7 +1206,7 @@ input[type="radio"] + label:before {
   .icon:before {
     line-height: inherit; }
   .icon.solid:before {
-    font-weight: 900; }
+    font-weight: 950; }
   .icon.brands:before {
     font-family: 'Font Awesome 5 Brands'; }
 
@@ -1361,7 +1361,7 @@ ul.icons {
     ul.icons li .icon {
       color: inherit; }
       ul.icons li .icon:before {
-        font-size: 1.25em; }
+        font-size: 2em; }
 
 /* Contact */
 ul.contact {
