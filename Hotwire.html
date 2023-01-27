@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Finnur - Hotwire</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<ul class="icons">
+										<li><a href="https://github.com/FinnurME" class="icon brands fa-github"><span class="label">Github</span></a>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Hotwire Experiment</h1>
+									</header>
+
+                                    <p>The object of this experiment is to learn how to use the Hot-wire method to get a point measurement of velocity. Then do spectral analysis on shedding behind a cylinder in the flow.</p>
+                                    <h3>The setup</h3>
+                                    <p>
+                                        The setup uses a jet made in-house. This jet has a honeycomb structure to make the flow more laminar. The jet nozzle has a smooth contraction going from Ø240 mm to Ø100 mm.
+
+                                        Before the contraction there is a pressure tap to measure the speed of the jet. This gage pressure is measured using a FCO560 micromanometer.
+
+                                        Temperature is measured using a COMARK C28 K TYPE. Measured with-in the airstream.
+
+                                        The room pressure is measured using a Vaisala barometer.
+
+                                        The hotwire is made by Dantech and is a Ø70 µm fiber probe of length 3 mm. The hotwire is of the CTA type.
+
+                                        The hotwire sends data to a miniTCA box and then to a National Instruments NI-Daqmx this is then controlled through a Python script.
+                                    </p>
+                                    <span class="image"><img src="images/HotWire_setup.jpg" width ="470" height = "300" alt="" /><b>Hot-Wire setup</b>
+                                    </span>
+                                    <h3>Free Flow</h3>
+                                    <p>
+                                    Calibration is done by matching hotwire voltage to the velocity calculated using the pressure tab. This is done at various points and a fourth-degree polynomial is match to the data. This polynomial can then be used to convert voltage data to velocity data.
+                                    </p>
+                                    <span class="image"><img src="images/HotWire_calibration.jpg" width ="470" height = "300" alt="" /><b>Calibration curve</b>
+                                    </span>
+                                    <h3>Velocity profiles</h3>
+                                   <p>
+                                    The probe was placed at a point slightly outside the nozzle diameter at 1cm away from the nozzle in the streamwise direction. From that point, there were measurements taken at 2mm intervals for 20mm. Then five measurements at 4mm intervals, eight at 5mm intervals and again five at 4mm intervals and finally ten measurements at 2mm intervals. In total, 39 measurement points 
+
+                                    Because the velocity at the boundary layer is expected to change a lot more quickly there are more points of measurements in the boundary layer. The velocity is expected to have little variance in the mean flow, close to the jet nozzle. 
+
+                                    Each measurement was taken at 2000 Hz for one second, 20 times on every measurement point.
+                                    </p>
+                                    <span class="image"><img src="images/HotWire_profiles.jpg" width ="960" height = "300" /><b>Velocity profiles</b>
+                                    </span>
+                                    <p>
+                                        the left figure shows the velocity profile given by the measurements at 10 mm away from the nozzle. The figure shows the steep angle at which the velocity increases as soon as the measurement is taken inside the boundary layer. The velocity inside the flow stays relatively consistent although not within error of the mean velocity of the flow. This is likely due to the very low uncertainty of the measurements. A likely explanation for the unusually low uncertainty is a loose thread that was later found on the probe, causing the cooling of the hot wire to be slowed. This causes the measured velocities to appear more averaged out.
+
+                                        The right figure shows the velocity profile at 65 cm away from the nozzle. The measurements were taken at an interval of 15 mm for 300 mm, starting from 150 mm radially away from the middle of the nozzle. The velocity has dispersed a lot more and follows closely a normal distribution, although not within error. Likely due to the same reason as stated before. The uncertainty is highest in the steepest part of the velocity profile due to the high standard deviation in the same area. This is due to the effect the viscous forces have on the jetflow.
+                                    </p>
+                                    <h3>Spectral analysis</h3>
+                                    <p>
+                                      For the spectral a 10 mm bar is placed in front of the jet exit. This causes oscillating vortex shedding. This frequency can be estimated beforehand by using the Strouhal number. This estimate can be used to find the sampling frequency, as twice the estimated frequency.
+
+                                    For the experiment it was chosen to go the safe way and use a sampling frequency of 1700 Hz.  Each block samples for 7000 times the estimated integral timescale. Resulting in 7 seconds. giving a total of 11900 samples. 400 blocks were chosen to get a low enough variability.The results from the test can be seen in the figure bellow. where a single block (black line), The average of all 400 blocks (red line) and the observed frequencies (blue lines)
+
+                                    </p>
+                                    <span class="image"><img src="images/HotWire_Spectral.jpg" width ="470" height = "300" alt="" /><b>Spectral analysis</b>
+                                    <p>
+                                    Here it is observed that there are two frequencies. The vortex shedding frequency and the double frequency. This is being observed because we played it safe and chose 1700 Hz.The shedding frequency is observed to be 244 Hz, and the double is 487 Hz. This matches the estimated shedding frequency of around 210 Hz.
+                                    </p>
+                                    <!--
+									<h2>Interdum sed dapibus</h2>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
+									<hr class="major" />
+
+									<h2>Magna etiam veroeros</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+
+									<hr class="major" />
+
+									<h2>Lorem aliquam bibendum</h2>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                                    -->
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+				        <div class="inner">
+                        <!-- Search -->
+                            <!--
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search..." />
+									</form>
+								</section>
+                            -->
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html"><b>Homepage</b></a></li>
+                                        <li><a href="VEL608M.html">VÉL608M</a></li>
+                                        <li><a href="VEL205M.html">VÉL205M</a></li>
+                                        <li><a href="ExperimentalFluidDynamics.html">DTU - 41822</a></li>
+                                    </ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Newest project</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="ParticleImageVelocimetry.html" class="image"><img src="images/PIV_object.jpg" alt="" /></a>
+											<p>PIV</p>
+										</article>
+                                    </div>
+                            </section>
+			             </div> 
+                     </div>
+                </div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
