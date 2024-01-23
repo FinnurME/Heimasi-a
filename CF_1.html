@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Finnur -  Free-fall Particle Size Measurement</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<ul class="icons">
+                                        <li><a href="https://www.linkedin.com/in/finnur-mauritz-einarsson-358651232/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
+										<li><a href="https://github.com/FinnurME" class="icon brands fa-github"><span class="label">Github</span></a>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+								<section>
+									<header class="main">
+										<h1>Free-fall Particle Size Measurement</h1>
+									</header>
+
+                                    <p>This assignment investigates a simple measurement of the size distribution of a particular batch of sand supplied to our laboratory in building 114. The sand is documented by the supplier in the attached datasheet, and it mainly consist of SiO2. The experiment is done in a small container made of Plexiglas with inner dimensions: height × width × depth = 200 mm × 100 mm × 10 mm. The container is filled with demineralized water and is illuminated with a Beuer TL 30 “Daylight therapy lamp” that provides bright and uniform light without flicker. The setup is observed with a monochrome camera (Basler acA1300-200um) running at frame rate of 168 Hz. An image of a ruler in the container provides the relation between physical space and camera pixels. The experiment is shown in a short video at DTU Learn. A tiny amount of sand is released at the top of the container,and the sand grains are recorded as a long series of images as the particles fall freely in the water.The temperature is 22°C</p>
+                                    <span class="image right"><img src="images/FreeFall_setup.jpg" alt="" />Setup</span>
+                                    <h3>The assignment</h3>
+                                    <ol type ="A" start="1">
+                                    <li>Approximate the sand grains to spherical particles falling at low Reynolds number (Stokes flow) and estimate the diameter for each track in the file “tracks.txt” from observed the free-fall velocity. Compare your results to the datasheet from the supplier in a plot.</li>
+                                    <li>Select a particle size distribution model from chapter 3.4 in Crowe et al that you find to be the best fit to the data found in question 1. Show model and data together in a plot. Also give your suggestion for a mean diameter for the particles based on data from question 1.</li>
+                                    <li>The experiment and the analysis described above has many shortcomings. Select three shortcomings that you find to be the most important and discuss them. For at least two of the shortcomings, try to either to quantify errors/importance or to improve the analysis and show improved results.</li>
+                                    </ol>
+                                    
+                                    <p>The text below is text from my solution, adjusted to html5 and shortened by ChatGPT-3.5.</p>
+                                    
+                                    
+                                    <h2>1. Estimating Particle Diameter from Free-Fall Velocity</h2>
+
+                                <p>By approximating sand grains as spheres falling at low Reynolds numbers (Stokes flow), the diameter (D) of each grain can be estimated using the following equation:</p>
+                                <center>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mrow>
+                                            <mi>D</mi>
+                                            <mo>=</mo>
+                                            <msqrt>
+                                                <mfrac linethickness="0">
+                                                    <mrow>
+                                                        <mn>18</mn>
+                                                        <mi>&#x03BC;</mi>
+                                                        <mi>U</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>g</mi>
+                                                        <mo>&#x2219;</mo>
+                                                        <mo stretchy="false">(</mo>
+                                                        <mi>&#x03C1;</mi>
+                                                        <mo>&#x209A;</mo>
+                                                        <mo>-</mo>
+                                                        <mi>&#x03C1;</mi>
+                                                        <mo>&#x209B;</mo>
+                                                        <mo stretchy="false">)</mo>
+                                                    </mrow>
+                                                </mfrac>
+                                            </msqrt>
+                                        </mrow>
+                                    </math>
+                                </center>
+
+                                <p>where <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>U</mi></math> is the free-fall velocity. Two methods were employed to estimate <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math>: one using average vertical velocity and the other using area data from the file "tracks.txt." Comparing the results to the data-sheet's diameter distribution, the method based on velocity estimation provided a better fit.</p>
+
+                                <span class="image fit"><img src="images/CF_free_fall_1.jpg" alt="" /></span>
+
+                                <h2>2. Particle Size Distribution Model</h2>
+
+                                <p>The Log-normal distribution model was found to fit the diameter distribution slightly better than the Gaussian-normal distribution. The calculated mean diameter was 0.164 mm, while the data-sheet provided a mean of 0.181 mm. Given that the data-sheet's mean is influenced by grain weight, the calculated mean diameter is considered a more accurate descriptor.</p>
+
+                                <span class="image fit"><img src="images/CF_free_fall_2.jpg" alt="" /></span>
+                                    
+
+                                <h2>3. Experiment Shortcomings and Improvements</h2>
+
+                                <h3>Shortcomings:</h3>
+
+                                <ol>
+                                    <li><strong>Sampling Volume:</strong> The experiment's sampling volume might not be representative of the grains' source, as observed discrepancies with the data-sheet's diameter distributions suggest.</li>
+                                    <li><strong>Tracking Algorithm:</strong> The simplicity of the tracking algorithm could lead to inaccuracies, especially when dealing with overlapping grains. Attempted improvements, like applying filters, did not yield successful results.</li>
+                                    <li><strong>Reynolds Number Assumption:</strong> Assuming a low Reynolds number flow may not be valid, as the Reynolds number is higher than accepted for this assumption. A correction factor could be applied to address this limitation.</li>
+                                </ol>
+
+                                <h2>Conclusion</h2>
+                                    <p>The experiment showed that with some accuracy the diameter distribution of particles can be estimated using their velocity in a flow. This is an interesting result since it means that a non-invasive and real time measurements can be made in an experiment. Using other methods such as for example a sieve, the grains can not be as accurately determined and the diameters are determined by the sieve mesh size. When this method is applicable it could also be less labor intensive and requires fewer tools while the experiment is being carried out.</p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+				        <div class="inner">
+                        <!-- Search -->
+                            <!--
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search..." />
+									</form>
+								</section>
+                            -->
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html"><b>Homepage</b></a></li>
+                                        <li><a href="VEL608M.html">VÉL608M</a></li>
+                                        <li><a href="VEL205M.html">VÉL205M</a></li>
+                                        <li><a href="ExperimentalFluidDynamics.html">DTU - 41822</a></li>
+                                    </ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Newest project</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="ParticleImageVelocimetry.html" class="image"><img src="images/PIV_object.jpg" alt="" /></a>
+											<p>PIV</p>
+										</article>
+                                    </div>
+                            </section>
+			             </div> 
+                     </div>
+                </div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
